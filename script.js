@@ -31,7 +31,7 @@ for (value of semester_links) {
     i++;
 }
 
-const p = fetch('https://api.counterapi.dev/v1/Aeroweb273/counter/up');
+const p = fetch('https://api.counterapi.dev/v1/Aeroweb27/counter/up');
 p.then((response) => {
     if (!response.ok) {
         console.log('Error in fetching Visiter count...');
