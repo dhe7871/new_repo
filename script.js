@@ -10,12 +10,12 @@ semester_links = [
     "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EqT5KXvHFp5DpkY7U04PPJsBF07QOQlfB0KCurDG9dL6wA?e=7ueP5b",
     "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EkgXGaG7GBpBtr0S05xksakB0_hHzc1njn55qgwQWuhx_g?e=30wycT",
     "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EvKHrcTfVK9GulzIlMQhTAgBY19ZiKyr4EXzYPi1uYfRjA?e=3KBqrb",
-    "#",
-    "#",
-    "#",
-    "#",
-    "#",
-    "#"
+    "not_found.html",
+    "not_found.html",
+    "not_found.html",
+    "not_found.html",
+    "not_found.html",
+    "not_found.html"
 ];
 
 let i = 1;
@@ -31,14 +31,16 @@ for (value of semester_links) {
     i++;
 }
 
-const p = fetch('https://api.counterapi.dev/v1/Aeroweb27/counter/up');
+const p = fetch('https://api.counterapi.dev/v1/Aeroweb273/counter/up');
 p.then((response) => {
     if (!response.ok) {
         console.log('Error in fetching Visiter count...');
     }
     return response.json();
 }).then((response) => {
+    localStorage.setItem("counter",response.count)
     counter.innerText = `Visiters: ${response.count}`;
+    
 });
 
 search.addEventListener('click', searchbar);
