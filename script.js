@@ -38,8 +38,8 @@ p.then((response) => {
     }
     return response.json();
 }).then((response) => {
-    localStorage.setItem("counter",response.count)
     counter.innerText = `Visiters: ${response.count}`;
+    localStorage.setItem("counter",response.count);
     
 });
 
