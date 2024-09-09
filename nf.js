@@ -5,7 +5,7 @@ const counter_nf = document.getElementById('visiters_nf');
 
 
 
-counter_nf.innerText = localStorage.getItem("counter");
+counter_nf.innerText = `Visiters: ${localStorage.getItem("counter")}`;
 
 search.addEventListener('click', searchbar);
 function searchbar() {
