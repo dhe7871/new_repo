@@ -6,10 +6,10 @@ const semesters = document.getElementById('semesters');
 
 
 semester_links = [
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/Eia039srhUdOtmT9ZUe2_-4BJADURgP7X8ZeOYGChmVGWQ",
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EqT5KXvHFp5DpkY7U04PPJsBF07QOQlfB0KCurDG9dL6wA?e=7ueP5b",
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EkgXGaG7GBpBtr0S05xksakB0_hHzc1njn55qgwQWuhx_g?e=30wycT",
-    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EvKHrcTfVK9GulzIlMQhTAgBY19ZiKyr4EXzYPi1uYfRjA?e=3KBqrb",
+    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/Eia039srhUdOtmT9ZUe2_-4BTHwumb9GPpd0Uphy4wjNvA?e=bxvBsk",
+    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EqT5KXvHFp5DpkY7U04PPJsBvGcmoM7LjBYxE-xMFwXPtw?e=RMa96B",
+    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EkgXGaG7GBpBtr0S05xksakBPP12dRUxo2xP5AQNU5GFZQ?e=LngMDV",
+    "https://iitkgpacin-my.sharepoint.com/:f:/g/personal/prajapatidheeraj_kgpian_iitkgp_ac_in/EvKHrcTfVK9GulzIlMQhTAgB6au_wDanMAcE4Dkq4b3Syg?e=z3dI9h",
     "not_found.html",
     "not_found.html",
     "not_found.html",
@@ -62,13 +62,13 @@ function searchbar() {
 
     clicks = ((clicks + 1) % 3);
 }
-inputbox.addEventListener('keydown', () => {
+inputbox.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         console.log(inputbox.value);
         clicks = 2;
     }
 });
-document.addEventListener('keydown', () => {
+document.addEventListener('keydown', (event) => {
     if (event.key === '/' && clicks != 1) {
         inputbox.style.display = "inline-block";
         inputbox.focus();
