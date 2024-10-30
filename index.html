@@ -68,6 +68,24 @@
       </div>
     </div>
 
+    <div class="formdiv">
+      <div class="formname">
+        <div id="feedbtn">Feedback and Suggestions</div>
+      </div>
+      <form id="feedform" class="feedform">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" class="input" required><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email" class="input" required><br>
+        <label for="feedback">Feedback/Suggestion</label>
+        <textarea name="feed" id="feedback" placeholder="Enter the feedback/Suggestion..." class="input textarea" required></textarea><br>
+
+        <!-- <input type="submit" value="Submit" id="submitbtn"> -->
+        <span id="submsnmsg" style="background-color: whitesmoke;color: black;font-size: 1.2rem;font-weight: 600;visibility: hidden;"></span><br>
+        <span id="submitbtn" style="text-align: center;">Submit</span>
+      </form>
+    </div>
+
     <div class="footer">
       <div class="px-2">Created By Dheeraj</div>
       <div class="px-2" id="visiters">Visiters: </div>
