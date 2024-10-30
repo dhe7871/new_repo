@@ -147,10 +147,41 @@ submitbtn.addEventListener('click', ()=>{
     }
 
     if(!message){
+        message = 'Feedback/Suggestion submitted successfully.';
+
+        feedData = {
+            'name': formdata.get('name'),
+            'email': formdata.get('email'),
+            'feedback': formdata.get('feedback')
+        }
+        console.log("feeddata: ",feedData)
+        //code to send data to the cloud is to be written here
+        fetch('https://aerowebapi-g8e0crb4ekhsgddg.centralindia-01.azurewebsites.net/postfeedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedData)
+        })
+        .then(response =>{
+            if(!response.ok){
+                throw new Error('Network response was not OK.')
+            }
+            return response.json()
+        })
+        .then(data => {
+            console.log('Successfully posted to api.', data);
+        })
+        .catch(error =>{
+            message = `Error: ${error}`;
+            console.error('Error: ', error);
+        })
+
+
         document.getElementById('name').value = '';;
         document.getElementById('email').value = '';
         document.getElementById('feedback').value = '';
-        document.getElementById('submsnmsg').innerText = 'Feedback/Suggestion submitted successfully.';
+        document.getElementById('submsnmsg').innerText = message;
         document.getElementById('submsnmsg').style.color = 'black';
         document.getElementById('submsnmsg').style.visibility = 'visible';
     }else{
@@ -158,6 +189,5 @@ submitbtn.addEventListener('click', ()=>{
         document.getElementById('submsnmsg').style.color = 'red';
         document.getElementById('submsnmsg').style.visibility = 'visible';
     }
-
-    //code to send data to the cloud is to be written here
+     
 })
