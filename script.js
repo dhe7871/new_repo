@@ -127,6 +127,8 @@ submitbtn.addEventListener('click', ()=>{
         if(!value){
             if(key == 'name' || key == 'email'){
                 message = `*Please enter your '${key}'.`;
+            }else if(key == 'rollnum'){
+                message = `*Please enter your 'Roll Number'`
             }else{
                 message = '*Please give your feedback/suggestions.';
             }
@@ -151,6 +153,7 @@ submitbtn.addEventListener('click', ()=>{
 
         feedData = {
             'name': formdata.get('name'),
+            'rollnum': formdata.get('rollnum'),
             'email': formdata.get('email'),
             'feedback': formdata.get('feedback')
         }
@@ -178,7 +181,8 @@ submitbtn.addEventListener('click', ()=>{
         })
 
 
-        document.getElementById('name').value = '';;
+        document.getElementById('name').value = '';
+        document.getElementById('rollnum').value = '';
         document.getElementById('email').value = '';
         document.getElementById('feedback').value = '';
         document.getElementById('submsnmsg').innerText = message;
